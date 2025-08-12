@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import React, { useState } from 'react';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -12,19 +13,15 @@ export const tabs = [
 
 export const App = () => {
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
-  const [activeTitle, setActiveTitle] = useState(tabs[0].title);
-  const handleTabSelected = someVelue => setActiveTabId(someVelue);
-  const handleActiveTitle = someVelue => setActiveTitle(someVelue);
+  const handleTabSelected = tabId =>
+    tabId !== activeTabId && setActiveTabId(tabId);
 
   return (
     <div className="section">
-      <h1 className="title">Selected tab is {activeTitle}</h1>
-
       <Tabs
         tabs={tabs}
-        activeTabId={activeTabId}
+        activeTabId={'kgkgkg'}
         onTabSelected={handleTabSelected}
-        onActiveTitle={handleActiveTitle}
       />
     </div>
   );
